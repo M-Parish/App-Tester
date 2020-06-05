@@ -2,6 +2,14 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <label>Zip Code</label>
+      <input v-model="zipCode">
+    </div>
+    <button @click="searchForWeather()">Search</button>
+    <div>
+      {{zipCode}}
+    </div>
   </div>
 </template>
 
@@ -10,8 +18,18 @@ import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      zipCode: ''
+    }
+  },
   components: {
     HelloWorld
+  },
+  methods: {
+    searchForWeather() {
+      console.log('do the thing');
+    }
   }
 }
 </script>
